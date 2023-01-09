@@ -6,13 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Psuedo-classes</title>
   <style>
-    ul > li:first-child {
+    #alpha ul > li:first-child {
       background-color: green;
     }
 
-    ul > li:last-child {
+    #alpha ul > li:last-child {
       background-color: blue;
     }
+
+    /* Third child element */
+    #beta li:nth-child(3) {
+      background-color: orange;
+    }
+
+    /* Every second element, starting with the second */
+    /* #beta li:nth-child(even) { */
+      #beta li:nth-child(2n) {
+      background-color: red;
+    }
+
+    /* Every second element, starting with the first */
+    /* #beta li:nth-child(odd) { */
+      #beta li:nth-child(2n + 1) {
+      color: white;
+      background-color: blue;
+    }
+
 </style>
 </head>
 <body>
@@ -21,7 +40,7 @@
     <header>
       <h1>CSS Pseudo-classes</h1>
     </header>
-    <section>
+    <section id="alpha">
       <ul>
         <li>First</li>
         <li>Second</li>
@@ -34,7 +53,7 @@
       </ul>
     </section>
     <!-- section#nth-child>ul>li*10{Item $} -->
-    <section id="nth-child">
+    <section id="beta">
       <ul>
         <li>Item 1</li>
         <li>Item 2</li>
