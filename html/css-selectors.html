@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors</title>
+    <style>
+      /* Selector building blocks */
+
+      /* id */
+      #id-example {
+        background-color: red;
+      }
+
+      /* class */
+      .class-example {
+        background-color: yellow;
+      }
+
+      /* html attributes */
+      [title] {
+        background-color: orange;
+      }
+
+      /* tags */
+      p {
+        background-color: rosybrown;
+      }
+
+      .tag-class-example {
+        background-color: green;
+      }
+
+      /* Combining selectors */
+      p.tag-class-example {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      p[title] {
+        color: white;
+      }
+
+      .class-and-attribute[title] {
+        text-decoration: underline;
+      }
+
+      /* 
+    ids arent usually used in combinations, because uniquely identifying the element
+    is usually enough
+    */
+
+      /*
+    #some-id.some-class {}
+    #some-id[some-attribute] {}
+    li#some-id {}
+
+    #navbar { background-color: chartreuse }
+    #navbar.drop-down { background-color: fuchsia;}
+    */
+
+      /* Selector Relationships */
+
+      /*
+    ol {
+      background-color: red;
+    }
+
+    ul {
+      background-color: green;
+    }
+    */
+
+      /* siblings */
+      /* + very next sibling, but only one */
+      /* "Dan, who was born right after me" */
+      #first-sibling + li {
+        background-color: blue;
+        color: white;
+      }
+
+      /* ~ all following siblings */
+      /* "All my younger sisters" */
+      #first-sibling ~ li {
+        font-weight: bolder;
+      }
+
+      /* a wild pseudo-element appears! */
+      #sibling > ul > li::marker {
+        color: black;
+      }
+
+      /* parent > child */
+      ol > li {
+        background-color: red;
+      }
+
+      ul > li {
+        background-color: green;
+      }
+
+      /* ancestor descendant */
+      #ancestor span {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>CSS Selectors</h1>
+      </header>
+      <section>
+        <h2>Parts of a selector</h2>
+        <ul>
+          <li id="id-example">This list item has an id attribute</li>
+          <li class="class-example">This list item has a CSS class</li>
+          <li title="attribute example">
+            This list item has an HTML attribute
+          </li>
+          <li>
+            This list item has a
+            <p>paragraph</p>
+            in it
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>CSS combinations</h2>
+        <p class="tag-class-example">
+          This paragraph has a different color and a different font
+        </p>
+        <blockquote class="tag-class-example">
+          This blockquote has the same class, but isn't combined with a
+          <code>p</code> tag.
+        </blockquote>
+        <p title="tag-title-example">A tag and a title attribute</p>
+        <p class="class-and-attribute" title="foo">
+          Has both an HTML attribute and a class.
+        </p>
+      </section>
+      <section>
+        <h2>Relationship selectors</h2>
+        <section id="parent-child">
+          <h3>Fruits</h3>
+          <ul>
+            <li>Apples</li>
+            <li>Peaches</li>
+            <li>Pears</li>
+          </ul>
+          <h3>Vegetables</h3>
+          <ol>
+            <li>Lettuce</li>
+            <li>Carrots</li>
+            <li>Green Beans</li>
+          </ol>
+        </section>
+        <section id="ancestor">
+          <h3>Ancestor-descendant</h3>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+              praesentium aut,
+              <span>error obcaecati, quam laudantium</span> voluptas eligendi
+              vel at amet corrupti natus inventore velit assumenda voluptates
+              ipsa ex numquam harum.
+            </p>
+          </div>
+        </section>
+        <section id="sibling">
+          <h3>Sibling relationships</h3>
+          <ul>
+            <li id="first-sibling">John</li>
+            <li>Paul</li>
+            <li>George</li>
+            <li>Ringo</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors</title>
+  <link rel="stylesheet" href="../css/using-css.css">
+  <style>
+    .yellow-background {
+      background-color: yellow;
+    }
+
+    .underline {
+      font-size: 125%;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>CSS Selectors</h1>
+    </header>
+    <section>
+      <h2>Using CSS</h2>
+      <section>
+        <h3>In-line</h3>
+        <p>This paragraph has <span style="color:rgb(15, 128, 21)">in-line</span> styles.</p>
+      </section>
+      <section>
+        <h3>Using a style block/element</h3>
+        <p class="yellow-background">This paragraph <span style="background-color: red; color: white">uses a CSS</span> class</p>
+      </section>
+      <section>
+        <h3>Using an imported CSS file</h3>
+        <p class="underline" id="custom">This paragraph is underlined.</p>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
