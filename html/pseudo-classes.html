@@ -1,72 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Psuedo-classes</title>
-  <style>
-    #alpha ul > li:first-child {
-      background-color: green;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Psuedo-classes</title>
+    <style>
+      #alpha ul > li:first-child {
+        background-color: green;
+      }
 
-    #alpha ul > li:last-child {
-      background-color: blue;
-    }
+      #alpha ul > li:last-child {
+        background-color: blue;
+      }
 
-    /* Third child element */
-    #beta li:nth-child(3) {
-      background-color: orange;
-    }
+      /* Third child element */
+      #beta li:nth-child(3) {
+        background-color: orange;
+      }
 
-    /* Every second element, starting with the second */
-    /* #beta li:nth-child(even) { */
+      /* Every second element, starting with the second */
+      /* #beta li:nth-child(even) { */
       #beta li:nth-child(2n) {
-      background-color: red;
-    }
+        background-color: red;
+      }
 
-    /* Every second element, starting with the first */
-    /* #beta li:nth-child(odd) { */
+      /* Every second element, starting with the first */
+      /* #beta li:nth-child(odd) { */
       #beta li:nth-child(2n + 1) {
-      color: white;
-      background-color: blue;
-    }
+        color: white;
+        background-color: blue;
+      }
 
-</style>
-</head>
-<body>
-  <!-- main>header>h1 -->
-  <main>
-    <header>
-      <h1>CSS Pseudo-classes</h1>
-    </header>
-    <section id="alpha">
-      <ul>
-        <li>First</li>
-        <li>Second</li>
-        <li>Third</li>
-        <li>Fourth</li>
-        <li>Fifth</li>
-        <li>Sixth</li>
-        <li>Seventh</li>
-        <li>Eighth</li>
-      </ul>
-    </section>
-    <!-- section#nth-child>ul>li*10{Item $} -->
-    <section id="beta">
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-        <li>Item 6</li>
-        <li>Item 7</li>
-        <li>Item 8</li>
-        <li>Item 9</li>
-        <li>Item 10</li>
-      </ul>
-    </section>
-  </main>
-</body>
+      #gamma p {
+        text-decoration: underline;
+      }
+
+      #gamma p:first-child {
+        background-color: yellow;
+      }
+
+      /* Doesn't work, as a div is not the first child of #gamma */
+      /* Find me the first child under gamma only if it's a div */
+      #gamma div:first-child {
+        background-color: dodgerblue;
+      }
+
+      /* Works! */
+      /* Find me the first div under gamma */
+      #gamma div:first-of-type {
+        background-color: dodgerblue;
+      }
+
+      #delta span {
+        background-color: purple;
+        color:cornsilk; 
+      }
+
+      #delta span::before {
+        content: "##";
+      }
+
+      #delta span::after {
+        content: "##";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- main>header>h1 -->
+    <main>
+      <header>
+        <h1>CSS Pseudo-classes</h1>
+      </header>
+      <section id="alpha">
+        <ul>
+          <li>First</li>
+          <li>Second</li>
+          <li>Third</li>
+          <li>Fourth</li>
+          <li>Fifth</li>
+          <li>Sixth</li>
+          <li>Seventh</li>
+          <li>Eighth</li>
+        </ul>
+      </section>
+      <!-- section#nth-child>ul>li*10{Item $} -->
+      <section id="beta">
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+          <li>Item 4</li>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li>Item 8</li>
+          <li>Item 9</li>
+          <li>Item 10</li>
+        </ul>
+      </section>
+      <section id="gamma">
+        <p>First paragraph</p>
+        <div>Just a div</div>
+        <p>Second paragraph</p>
+        <div>Another div</div>
+      </section>
+      <section id="delta">
+        <p>This is text before a span. <span>This is a span.</span> This is text after a span.</p>
+      </section>
+    </main>
+  </body>
 </html>
