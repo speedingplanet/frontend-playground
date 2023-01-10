@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taco Ordering Form</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 800px;
+        /* border: 2px dashed red; */
+
+      }
+
+      .container div {
+        /* width: 25%; */
+        /* border: 2px solid black; */
+        flex-basis: 25%;
+        box-sizing: border-box;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Taco ordering form</h1>
+      </header>
+      <form>
+        <section>
+          <h2>Taco Protein</h2>
+          <div>
+            <p>Please choose a protein:</p>
+            <div class="container">
+              <div>
+                <label>
+                  <input type="radio" name="taco-protein" value="protein-chicken" />
+                  🐔 Chicken
+                </label>
+              </div>
+              <div>
+                <input type="radio" name="taco-protein" value="protein-beef" id="protein-beef" />
+                <label for="protein-beef">🐮 Beef</label>
+              </div>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="taco-protein"
+                    value="chicken-tinga"
+                    id="protein-chicken-tinga" />
+                    🐔🌶️ chicken tinga
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="taco-protein"
+                    value="carne-asada"
+                    id="protein-carne-asada" />
+                  🥩 carne asada
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="taco-protein"
+                    value="al-pastor"
+                    id="protein-al-pastor" />
+                    🐷🍍 al pastor
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="taco-protein" value="pork" id="protein-pork" />
+                  🐷 pork
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="taco-protein" value="veggie" id="protein-veggie" />
+                  🥦 veggie
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="taco-protein" value="avocado" id="protein-avocado" />
+                  🥑 avocado
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="taco-protein"
+                    value="impossible-beef"
+                    id="protein-impossible-beef" />
+                    🚫🐮 impossible beef
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="taco-protein"
+                    value="impossible-chicken"
+                    id="protein-impossible-chicken" />
+                    🚫🐔 impossible chicken
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="taco-protein" value="shrimp" id="protein-shrimp" />
+                  🦐 shrimp
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="radio" name="taco-protein" value="fish" id="protein-fish" />
+                  🐟 fish
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- 
+            1. Build radio buttons for the protein choices below. Feel free to add more if you'd like.
+                  chicken
+                  beef
+                  chicken tinga
+                  carne asada
+                  al pastor
+                  pork
+                  veggie
+                  avocado
+                  impossible beef
+                  impossible chicken
+                  shrimp
+                  fish
+            2. Put the radio buttons into a flexbox container (a div with display set to "flex")
+            3. See if you can set up the flexbox to arrange the items into a 4x3 grid, e.g.
+
+              chicken     chicken tinga     beef     carne asada
+              al pastor   pork              veggie   avocado
+
+              etc.
+       -->
+        </section>
+        <section>
+          <h2>Other ingredients</h2>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
