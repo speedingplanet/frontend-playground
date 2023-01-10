@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Layout</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        border: 2px black solid;
+        width: fit-content;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: flex-end; */
+        /* justify-content: center; */
+        /* justify-content: space-between; */
+        justify-content: space-around;
+        border: 3px dotted green;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div id="box-one">
+          <p>Box one</p>
+        </div>
+        <div id="box-two">
+          <p>Box two</p>
+        </div>
+        <div id="box-three">
+          <p>Box three</p>
+        </div>
+        <div id="box-four">
+          <p>Box four</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
